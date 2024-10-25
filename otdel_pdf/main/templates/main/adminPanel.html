@@ -1,0 +1,59 @@
+{% extends 'main/ok.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main/css/forAdminPanel.css' %}">
+{% endblock %}
+{% block title %}
+    Панель пользователя с повышенным уровнем доступома
+{% endblock %}
+
+{% block navigation %}
+    <ul>
+        <a href="/"><li><img src="{% static 'main/icons/house.svg' %}" class="navigation-img">Стартовая страница</li></a>
+        <a href="{% url 'adminPanel' %}"><li><img src="{% static 'main/icons/bar-chart-steps.svg' %}" class="navigation-img">Панель администратора</li></a>
+        <a href=""><li><img src="{% static 'main/icons/filetype-pdf.svg' %}" class="navigation-img">PDF</li></a> 
+        <a href="{% url 'newUser' %}"><li><img src="{% static 'main/icons/person-plus.svg' %}" class="navigation-img">Добавить сотрудника</li></a> 
+        <a href="{% url 'deleteUser' %}"><li><img src="{% static 'main/icons/person-dash.svg' %}" class="navigation-img">Удалить сотрудника</li></a> 
+        <a href=""><li><img src="{% static 'main/icons/person-gear.svg' %}" class="navigation-img">Личный план</li></a>
+        <a href="{% url 'changePassword' %}"><li><img src="{% static 'main/icons/person-down.svg' %}" class="navigation-img">Изменить пароль</li></a>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="main-div"> 
+        <p class="first-title">Панель администратора</p>
+        <p class="second-title">Выберете действие для внесения изменений</p>
+        <form action="{% url 'newUser' %}">
+            <button class="add-worker" href="{% url 'newUser' %}" type="submit">
+                Добавить
+            </button>
+        </form>  
+        <form action="{% url 'adminPanel' %}">
+            <button class="delete-worker" type="submit">
+                Удалить
+            </button>
+        </form>  
+        <form action="{% url 'adminPanel' %}">
+            <button class="add-single-info" type="submit">
+                Личный
+            </button>
+        </form>  
+        <form action="{% url 'adminPanel' %}">
+            <button class="anth" type="submit">
+                Изменить
+            </button>
+        </form>  
+        <form action="{% url 'adminPanel' %}">
+            <button class="pdf-button" type="submit">
+                PDF
+            </button>
+        </form> 
+        <form action="{% url 'adminPanel' %}">
+            <button class="add-info-button" type="submit">
+                Add info
+            </button>
+        </form> 
+    </div>
+
+{% endblock %}

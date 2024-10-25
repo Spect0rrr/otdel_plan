@@ -1,0 +1,72 @@
+body {
+    background: rgb(212, 238, 255);
+}
+
+.logo {
+    width: 40%;
+    float: left;
+}
+
+aside {
+    float: left;
+    background: rgba(245, 245, 245, 0.733);
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: black;
+    border-right: 5px solid #4d4d4d;
+    z-index: 1;
+}
+
+aside .logo-text {
+    font-size: 3.2vh;
+    margin-left: 15px;
+    font-weight: bold;
+    position: relative;
+    top: 4%;
+    font-family: 'MyFont', sans-serif;
+}
+
+aside h3 {
+    margin-top: 17vh;
+    font-size: 3vh;
+    z-index: 1;
+}
+
+aside ul {
+    list-style: none;
+    text-decoration: none;
+    z-index: 1;
+}
+
+aside ul li {
+    color: black;
+    display: block;
+    margin-top: 20px;
+    font-size: 2vh;
+    transition: transform .6s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: rgb(107, 5, 5);
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+aside .navigation-img {
+    position: relative;
+    height: 2.2vh;
+    padding-right: 4px;
+    padding-top: -1vh;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('../fonts/Alegreyascmedium.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}

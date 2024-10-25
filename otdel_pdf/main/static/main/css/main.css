@@ -1,0 +1,64 @@
+main .first-title {
+    position: relative;
+    text-align: center;
+    font-family: 'MyFont', sans-serif;
+    font-size: 6vh;
+    padding-top: 7%;
+}
+
+main .second-title {
+    position: relative;
+    text-align: center;
+    font-family: 'MyFont', sans-serif;
+    font-size: 4vh;
+    padding-bottom: 2%;
+}
+
+main .log, .pas {
+    position: relative;
+    text-align: center;
+    padding: 1vh;
+}
+
+main .log_text, .pas_text {
+    font-family: 'MyFont', sans-serif;
+    font-size: 3vh;
+    padding-right: 1vw;
+}
+
+main .login, .password {
+    background-color: rgb(243, 254, 255);
+    width: 35%;
+    height: 3vh;
+    border-radius: 18px;
+    padding-left: 1%;
+    font-family: 'MyFont', sans-serif;
+    font-size: 120%;
+}
+
+main .vxod {
+    position: relative;
+    width: 8vw;
+    height: 4vh;
+    border: none;
+    background-color: #1C4FD1;
+    border-radius: 25px;
+    color: white;
+    font-family: 'MyFont', sans-serif;
+    font-size: 2.5vh;
+    transition: transform 0.6s ease;
+    margin-left: 19vw;
+    margin-top: 4vh;
+}
+
+.vxod:hover {
+    transform: scale(1.05);
+}
+
+main {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    padding-top: 15vh;
+}

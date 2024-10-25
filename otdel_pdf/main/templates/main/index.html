@@ -1,0 +1,37 @@
+{% extends 'main/ok.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+{% endblock %}
+
+{% block title %}
+    Главная страница аутентификации
+{% endblock %}
+
+{% block navigation %}
+    <ul>
+        <a href="/"><li><img src="{% static 'main/icons/house.svg' %}" class="navigation-img">Стартовая страница</li></a>
+        <a href=""><li><img src="{% static 'main/icons/filetype-pdf.svg' %}" class="navigation-img">PDF</li></a> 
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="general-page">
+        <p class="first-title">Главная страница</p>
+        <p class="second-title">Введите логин и пароль для аутентификации</p>
+        <div class="log">
+            <label class="log_text">Логин:</label>
+            <input type="text" class="login" name="login">
+        </div>
+        <div class="pas">
+            <label class="pas_text">Пароль:</label>
+            <input type="text" class="password" name="pas">
+        </div>
+        <form action="{% url 'adminPanel' %}">
+            <button class="vxod" type="submit">
+                Вход
+            </button>
+        </form>  
+    </div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'main/ok.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main/css/forAddNewUser.css' %}">
+{% endblock %}
+{% block title %}
+    Добавление нового сотрудника
+{% endblock %}
+
+{% block navigation %}
+    <ul>
+        <a href="/"><li><img src="{% static 'main/icons/house.svg' %}" class="navigation-img">Стартовая страница</li></a>
+        <a href="{% url 'adminPanel' %}"><li><img src="{% static 'main/icons/bar-chart-steps.svg' %}" class="navigation-img">Панель администратора</li></a>
+        <a href=""><li><img src="{% static 'main/icons/filetype-pdf.svg' %}" class="navigation-img">PDF</li></a> 
+        <a href="{% url 'newUser' %}"><li><img src="{% static 'main/icons/person-plus.svg' %}" class="navigation-img">Добавить сотрудника</li></a> 
+        <a href="{% url 'deleteUser' %}"><li><img src="{% static 'main/icons/person-dash.svg' %}" class="navigation-img">Удалить сотрудника</li></a> 
+        <a href=""><li><img src="{% static 'main/icons/person-gear.svg' %}" class="navigation-img">Личный план</li></a>
+        <a href="{% url 'changePassword' %}"><li><img src="{% static 'main/icons/person-down.svg' %}" class="navigation-img">Изменить пароль</li></a>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="main-div"> 
+        <p class="first-title">Добавьте нового сотрудника</p>
+        <p class="second-title">Заполните требуемые поля</p>
+        <div class="login">
+            <label class="login_text">Логин:</label>
+            <input type="text" class="enter_login" name="log">
+            <div class="image-container">
+                <img src="{% static 'main/icons/info-square.svg' %}" alt="image" class="Image">
+                <div class="tooltip">В данном поле вам требуется ввести логин. Логин - это ваше имя, фамилия и отчество. Пример ввода: Иванов Иван Иванович</div>
+            </div>
+        </div>
+        <div class="key">
+            <label class="login_text">Код доступа:</label>
+            <select class="options" name="options">
+                <option value="" hidden selected>Выберете права пользователя</option>
+                <option value="option1">Доступ без прав администратора</option>
+                <option value="option2">Доступ с правами администратора</option>
+            </select>
+            <div class="image-container">
+                <img src="{% static 'main/icons/info-square.svg' %}" alt="image" class="Image">
+                <div class="tooltip" class="second-tooltip">
+                    <p>В данном поле вам требуется выбрать права доступа пользователя.</p>
+                    <p>С правами администратора пользователь может добавлять и удалять сотрудников, менять их рабочий план.</p>
+                    <p>Также администратор имеет право вносить изменения в работы отдела, менять пароли работников.</p></div>
+            </div>
+        </div>
+        <form>
+            <button class="accept-button" type="submit">
+                Подтвердить
+            </button>
+        </form> 
+    </div>
+{% endblock %}
